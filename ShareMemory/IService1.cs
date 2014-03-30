@@ -17,12 +17,22 @@ namespace ShareMemory
         string GetData(int value);
 
         [OperationContract]
+        int SetData(User user);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: 在此添加您的服务操作
     }
 
-
+    [DataContract]
+    public class User
+    {
+        [DataMember]
+        public bool UserID { get; set; }
+        [DataMember]
+        public bool Password { get; set; }
+    }
     // 使用下面示例中说明的数据约定将复合类型添加到服务操作。
     [DataContract]
     public class CompositeType

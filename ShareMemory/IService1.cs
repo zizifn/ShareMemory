@@ -14,15 +14,29 @@ namespace ShareMemory
     {
 
         [OperationContract]
-        string GetData(int value);
+        string GetData(GetdataRequest getdataRequest);
 
         [OperationContract]
-        int SetData(User user);
+        bool SetData(SetdataRequest setdataRequest);
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+    }
 
-        // TODO: 在此添加您的服务操作
+    [DataContract]
+    public class GetdataRequest
+    {
+        [DataMember]
+        public string UserId { get; set; }
+
+    }
+
+    [DataContract]
+    public class SetdataRequest
+    {
+        [DataMember]
+        public string UserId { get; set; }
+
+        [DataMember]
+        public string Data { get; set; }
     }
 
     [DataContract]

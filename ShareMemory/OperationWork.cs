@@ -29,8 +29,16 @@ namespace ShareMemory
             // in the full sharememory, we should add logic here
             // 1. we need check userid have or didn't have access to set data
 
-            DataStore.Add(request.UserId, request.Data);
-            result = true;
+            if (DataStore.ContainsKey(request.UserId))
+            {
+                DataStore[request.UserId] = request.Data;
+                result = true;
+            }
+            else
+            {
+                DataStore.Add(request.UserId, request.Data);
+                result = true;
+            }
          
             return result;
         }

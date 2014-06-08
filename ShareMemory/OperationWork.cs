@@ -24,12 +24,12 @@ namespace ShareMemory
             bool result = false;
             if (DataStore.ContainsKey(request.UserId))
             {
-                result = false;
-            }
-            else
-            {
                 DataStore.Add(request.UserId, request.Data);
                 result = true;
+            }
+            else
+            {                
+                result = false;
             }
             return result;
         }

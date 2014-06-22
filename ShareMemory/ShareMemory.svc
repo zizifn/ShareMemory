@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ShareMemory.ShareMemory" CodeBehind="ShareMemory.svc.cs" %>
